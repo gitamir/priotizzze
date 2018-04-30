@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5681521605A89F64F57C0C9E /* Pods_prioritizzze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E88A6B62CDAEDBA119EB96 /* Pods_prioritizzze.framework */; };
+		73B08B752094F030005EB75A /* MainViewModelDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B08B742094F030005EB75A /* MainViewModelDefault.swift */; };
+		73B08B772094F040005EB75A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B08B762094F040005EB75A /* MainModel.swift */; };
+		73B08B7920950201005EB75A /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B08B7820950201005EB75A /* MainModule.swift */; };
 		73C9C8B12094BAD100B35560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C9C8B02094BAD100B35560 /* AppDelegate.swift */; };
-		73C9C8B32094BAD100B35560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C9C8B22094BAD100B35560 /* ViewController.swift */; };
+		73C9C8B32094BAD100B35560 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C9C8B22094BAD100B35560 /* MainViewController.swift */; };
 		73C9C8B62094BAD100B35560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C9C8B42094BAD100B35560 /* Main.storyboard */; };
 		73C9C8B92094BAD100B35560 /* prioritizzze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73C9C8B72094BAD100B35560 /* prioritizzze.xcdatamodeld */; };
 		73C9C8BB2094BAD300B35560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C9C8BA2094BAD300B35560 /* Assets.xcassets */; };
@@ -18,9 +21,12 @@
 
 /* Begin PBXFileReference section */
 		4DAB8093C44A21EA12808A22 /* Pods-prioritizzze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prioritizzze.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prioritizzze/Pods-prioritizzze.debug.xcconfig"; sourceTree = "<group>"; };
+		73B08B742094F030005EB75A /* MainViewModelDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelDefault.swift; sourceTree = "<group>"; };
+		73B08B762094F040005EB75A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		73B08B7820950201005EB75A /* MainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
 		73C9C8AD2094BAD100B35560 /* prioritizzze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prioritizzze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C9C8B02094BAD100B35560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		73C9C8B22094BAD100B35560 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		73C9C8B22094BAD100B35560 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		73C9C8B52094BAD100B35560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73C9C8B82094BAD100B35560 /* prioritizzze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = prioritizzze.xcdatamodel; sourceTree = "<group>"; };
 		73C9C8BA2094BAD300B35560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +82,49 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		73B08B6F2094EE52005EB75A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				73B08B702094EE65005EB75A /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		73B08B702094EE65005EB75A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				73B08B712094EE6B005EB75A /* View */,
+				73B08B722094EE72005EB75A /* ViewModel */,
+				73B08B732094EE7B005EB75A /* Model */,
+				73B08B7820950201005EB75A /* MainModule.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		73B08B712094EE6B005EB75A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				73C9C8B22094BAD100B35560 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		73B08B722094EE72005EB75A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73B08B742094F030005EB75A /* MainViewModelDefault.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		73B08B732094EE7B005EB75A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73B08B762094F040005EB75A /* MainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		73C9C8A42094BAD100B35560 = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				73C9C8B02094BAD100B35560 /* AppDelegate.swift */,
-				73C9C8B22094BAD100B35560 /* ViewController.swift */,
+				73B08B6F2094EE52005EB75A /* Modules */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -134,6 +183,7 @@
 				73C9C8A92094BAD100B35560 /* Sources */,
 				73C9C8AA2094BAD100B35560 /* Frameworks */,
 				73C9C8AB2094BAD100B35560 /* Resources */,
+				DC8DF6E84F6C864F6FA9C20B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +259,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DC8DF6E84F6C864F6FA9C20B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-prioritizzze/Pods-prioritizzze-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prioritizzze/Pods-prioritizzze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -216,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73C9C8B32094BAD100B35560 /* ViewController.swift in Sources */,
+				73C9C8B32094BAD100B35560 /* MainViewController.swift in Sources */,
 				73C9C8B92094BAD100B35560 /* prioritizzze.xcdatamodeld in Sources */,
 				73C9C8B12094BAD100B35560 /* AppDelegate.swift in Sources */,
+				73B08B772094F040005EB75A /* MainModel.swift in Sources */,
+				73B08B7920950201005EB75A /* MainModule.swift in Sources */,
+				73B08B752094F030005EB75A /* MainViewModelDefault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +440,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 948A4A3PQC;
-				INFOPLIST_FILE = prioritizzze/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/prioritizzze/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,7 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anuriev.prioritizzze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -384,7 +460,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 948A4A3PQC;
-				INFOPLIST_FILE = prioritizzze/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/prioritizzze/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anuriev.prioritizzze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
