@@ -12,7 +12,3 @@ import ReactiveSwift
 protocol MainViewModel: class {
     var entities: Property<[Entity]> { get }
 }
-
-protocol MainView: class {
-    var reactiveEntities: BindingTarget<[Entity]> { get }
-}

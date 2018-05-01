@@ -6,5 +6,7 @@ target 'prioritizzze' do
   use_frameworks!
 
   pod 'ReactiveCocoa', '~> 7.0'
+  pod 'Swinject'
+  pod 'SwinjectStoryboard'
 
 end
