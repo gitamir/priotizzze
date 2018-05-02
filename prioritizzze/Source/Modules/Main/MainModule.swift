@@ -12,3 +12,7 @@ import ReactiveSwift
 protocol MainViewModel: class {
     var entities: Property<[Entity]> { get }
 }
+
+protocol MainCellModel: class {
+    var entity: Property<Entity> { get }
+}

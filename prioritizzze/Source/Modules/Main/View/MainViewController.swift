@@ -39,9 +39,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell,
-            let data = viewModel?.entities.value[indexPath.row] {
-            cell.configure(title: data.title, description: data.description ?? "")
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell {
+            cell.viewModel = MainCellModel viewModel?.entities.map { $0[indexPath.row] }
             
             return cell
         }

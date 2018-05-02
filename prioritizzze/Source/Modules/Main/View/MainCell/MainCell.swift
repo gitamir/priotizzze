@@ -9,12 +9,27 @@
 import UIKit
 
 final class MainCell: UITableViewCell {
+    
+    public var viewModel: MainCellModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            viewModel
+                .entity
+                .producer
+                .startWithValues { [weak self] entity in
+                    self?.configure(
+                        title: entity.title,
+                        description: entity.description
+                    )
+            }
+        }
+    }
 
     @IBOutlet private weak var titleLabel: UILabel!
     
     @IBOutlet private weak var descriptionLabel: UILabel!
 
-    func configure(title: String, description: String) {
+    private func configure(title: String, description: String?) {
         titleLabel.text = title
         descriptionLabel.text = description
     }
