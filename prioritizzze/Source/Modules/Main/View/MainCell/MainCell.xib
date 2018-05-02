@@ -32,7 +32,7 @@
                         </constraints>
                         <state key="normal" image="DownArrow"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F23-Ow-51d">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F23-Ow-51d">
                         <rect key="frame" x="16" y="35" width="300" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
@@ -40,6 +40,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Heo-de-LVh" firstAttribute="top" secondItem="F23-Ow-51d" secondAttribute="bottom" constant="11" id="51B-Hc-e6o"/>
                     <constraint firstItem="FDI-HQ-a1T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="AJJ-5i-E8g"/>
                     <constraint firstItem="Heo-de-LVh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="G3z-Bu-6kc"/>
                     <constraint firstItem="FDI-HQ-a1T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Nx0-ce-kPK"/>
