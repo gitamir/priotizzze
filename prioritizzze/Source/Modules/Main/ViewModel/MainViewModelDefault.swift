@@ -17,5 +17,9 @@ final class MainViewModelDefault: MainViewModel {
         mutableEntities = MutableProperty(Entity.makeFakeEntities())
         entities = Property(capturing: mutableEntities)
     }
+    
+    func refreshData() {
+        mutableEntities.value[0] = Entity(title: "Обновленный энтити вухуху!!", description: "Прювейт!")
+    }
 }
 

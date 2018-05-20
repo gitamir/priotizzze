@@ -20,8 +20,13 @@ class MainViewController: UIViewController {
                 .entities
                 .producer
                 .skipRepeats()
-                .startWithValues { [weak self] _ in
-                    self?.tableView?.reloadData()
+                .startWithValues { [weak self] entities in
+                    self?.tableView?.visibleCells.forEach { cell in
+                        if let cell = cell as? MainCell,
+                            let indexPath = self?.tableView?.indexPath(for: cell) {
+                            cell.updater.send(value: entities[indexPath.row])
+                        }
+                    }
                 }
             }
         }
@@ -29,7 +34,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "MainCell", bundle: nil), forCellReuseIdentifier: "MainCell")
+        tableView.registerNib(ofType: MainCell.self)
+    }
+    
+    @IBAction func refreshData(_ sender: UIButton) {
+        viewModel?.refreshData()
     }
 }
 
@@ -39,12 +48,29 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell {
-            cell.viewModel = MainCellModel viewModel?.entities.map { $0[indexPath.row] }
-            
+        let cell = tableView.dequeueReusableCell(ofType: MainCell.self, for: indexPath)
+        cell.updater.send(value: viewModel?.entities.value[indexPath.row])
+        return cell
+    }
+}
+
+extension UITableView {
+    func dequeueReusableCell<T: UITableViewCell>(ofType type: T.Type, for indexPath: IndexPath) -> T {
+        if let cell = dequeueReusableCell(withIdentifier: String(describing: type), for: indexPath) as? T {
             return cell
+        } else {
+            fatalError("Not able to dequeue cell!")
         }
-        
-        return UITableViewCell()
+    }
+    
+    func registerNib<T>(ofType type: T.Type) {
+        let description = String(describing: T.self)
+        register(
+            UINib(
+                nibName: description,
+                bundle: nil
+            ),
+            forCellReuseIdentifier: description
+        )
     }
 }

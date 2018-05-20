@@ -11,6 +11,7 @@ import ReactiveSwift
 
 protocol MainViewModel: class {
     var entities: Property<[Entity]> { get }
+    func refreshData()
 }
 
 protocol MainCellModel: class {

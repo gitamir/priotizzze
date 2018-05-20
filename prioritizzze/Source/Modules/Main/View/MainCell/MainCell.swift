@@ -7,30 +7,32 @@
 //
 
 import UIKit
+import ReactiveSwift
+import Result
 
 final class MainCell: UITableViewCell {
     
-    public var viewModel: MainCellModel? {
-        didSet {
-            guard let viewModel = viewModel else { return }
-            viewModel
-                .entity
-                .producer
-                .startWithValues { [weak self] entity in
-                    self?.configure(
-                        title: entity.title,
-                        description: entity.description
-                    )
-            }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        signal.observeValues { [weak self] entity in
+            self?.setup(entity)
         }
+    }
+    
+    private let (signal, observer) = Signal<Entity?, NoError>.pipe()
+    
+    public var updater: Signal<Entity?, NoError>.Observer {
+        return self.observer
     }
 
     @IBOutlet private weak var titleLabel: UILabel!
     
     @IBOutlet private weak var descriptionLabel: UILabel!
-
-    private func configure(title: String, description: String?) {
-        titleLabel.text = title
-        descriptionLabel.text = description
+    
+    private func setup(_ entity: Entity?) {
+        guard let entity = entity else { return }
+        titleLabel.text = entity.title
+        descriptionLabel.text = entity.description
     }
 }
